@@ -9,8 +9,9 @@ class Store {
     if (!fs.existsSync(this.path)) {
       const initial_data = {
         "boards": [
-          {"name": 1}, 
-          {"name": 2}
+          {"name": "test1"}, 
+          {"name": "test2"},
+          {"name": "test3"}
         ]
       }
       fs.writeFileSync(this.path, JSON.stringify(initial_data));
