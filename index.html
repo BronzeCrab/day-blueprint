@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Boards</title>
+</head>
+<body>
+  <div>hello world</div>
+
+  <div id="container">
+    <div>Draggable 1</div>
+    <div>Draggable 2</div>
+    <div>Draggable 3</div>
+  </div>
+
+<script type="text/javascript">
+  const smooth = require('smooth-dnd');
+  var containerElement = document.getElementById('container');
+  var container = smooth.smoothDnD(containerElement);
+</script>
+</body>
+</html>

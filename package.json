@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "electron": "electron ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@shopify/draggable": "^1.0.0-beta.8",
-    "electron": "^9.0.3"
-  }
+    "electron": "^9.0.3",
+    "smooth-dnd": "^0.12.1"
+  },
+  "devDependencies": {}
 }
