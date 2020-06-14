@@ -1,3 +1,11 @@
+It's very basic electron app, there are 3 main files:
+
+`index.js` - main server-side file, invoking electron process
+
+`store.js` - basic storage
+
+`main.html` - main html page of the app
+
 How to install and run it:
 
 `npm install`
