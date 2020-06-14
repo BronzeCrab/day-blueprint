@@ -17,7 +17,7 @@ app.on('ready', () => {
     	webPreferences: {nodeIntegration: true}
     });
     mainWindow.webContents.openDevTools()
-    mainWindow.loadURL(`file://${__dirname}/index.html`);
+    mainWindow.loadURL(`file://${__dirname}/main.html`);
 });
 
 

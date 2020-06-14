@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Boards</title>
+  <link rel="stylesheet" type="text/css" href="./css/bulma.min.css"/>
+  <link rel="stylesheet" type="text/css" href="./css/custom.css"/>
+</head>
+<body>
+  <div class="container">
+    <header class="section">
+      <h1 class="title">
+        Hello World
+      </h1>
+      <p class="subtitle">
+        My first website with <strong>Bulma</strong>!
+      </p>
+    </header>
+
+    <div class="columns">
+      <div class="column board" id="todo_board">
+      </div>
+      <div class="column board">
+        Second column
+      </div>
+      <div class="column board">
+        Third column
+      </div>
+    </div>
+
+    <div id="container">
+      
+    </div>
+  </div>
+
+
+<script type="text/javascript">
+  const smooth = require('smooth-dnd');
+  const { smoothDnD } = smooth;
+
+  const electron = require('electron');
+  const { ipcRenderer } = electron;
+  ipcRenderer.send('getBoards')
+
+  ipcRenderer.on('sendBoards', (event, boards) => {
+    let myHtml = '';
+    boards.forEach(element => myHtml += `<div class="card">${element.name}</div>`);
+    document.querySelector('#todo_board').innerHTML = myHtml;
+
+    var containerElements = document.getElementsByClassName('column board');
+    for (i=0; i < containerElements.length; i++) {
+      smoothDnD(containerElements[i]);
+    }
+  });
+</script>
+</body>
+</html>
